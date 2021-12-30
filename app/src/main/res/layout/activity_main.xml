@@ -11,12 +11,38 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".MainActivity">
+        <androidx.drawerlayout.widget.DrawerLayout
+            android:id="@+id/my_drawer_layout"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            tools:context=".MainActivity"
+            tools:ignore="HardcodedText">
 
-        <!--   <com.google.android.material.appbar.AppBarLayout-->
-        <!--       android:layout_width="match_parent"-->
-        <!--       android:layout_height="wrap_content">-->
-        <!--      -->
-        <!--   </com.google.android.material.appbar.AppBarLayout>-->
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="128dp"
+                    android:gravity="center"
+                    android:text="GeeksforGeeks"
+                    android:textSize="18sp" />
+
+            </LinearLayout>
+            <androidx.appcompat.widget.Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/toolbar"
+                android:backgroundTint="@color/cream"/>
+            <com.google.android.material.navigation.NavigationView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_gravity="start"
+                app:menu="@menu/main_drawable"
+                app:headerLayout="@layout/header_nav"
+                android:id="@+id/nav_main"/>
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -36,10 +62,9 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/menu"
-                        android:layout_alignParentLeft="true" />
+                        android:layout_alignParentLeft="true"
+                        android:src="@drawable/menu" />
                 </RelativeLayout>
-
                 <RelativeLayout
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -48,57 +73,42 @@
                     <ImageView
                         android:layout_width="40dp"
                         android:layout_height="40dp"
-                        android:src="@drawable/search"
-                        android:layout_alignParentRight="true" />
+                        android:layout_alignParentRight="true"
+                        android:src="@drawable/search" />
                 </RelativeLayout>
             </LinearLayout>
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Good Morning"
-                android:layout_marginTop="30dp" />
+                android:layout_marginTop="30dp"
+                android:text="Good Morning" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Jon Snow"
                 android:layout_marginTop="30dp"
+                android:text="Jon Snow"
                 android:textSize="20sp"
                 android:textStyle="bold" />
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="Your Daily Reads"
-                android:layout_marginTop="30dp" />
+                android:layout_marginTop="30dp"
+                android:text="Your Daily Reads" />
 
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv"
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/rv" />
+                android:layout_height="match_parent" />
         </LinearLayout>
-        "
-
+        </androidx.drawerlayout.widget.DrawerLayout>
         <com.etebarian.meowbottomnavigation.MeowBottomNavigation
+            android:id="@+id/nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:id="@+id/nav">
-            <!--        <LinearLayout-->
-            <!--            android:layout_width="match_parent"-->
-            <!--            android:layout_height="wrap_content"-->
-            <!--            android:orientation="horizontal"-->
-            <!--            android:padding="10dp">-->
-            <!--            <ImageView-->
-            <!--                android:layout_width="40dp"-->
-            <!--                android:layout_height="40dp"-->
-            <!--                android:src="@drawable/house"/>-->
-            <!--        <ImageView-->
-            <!--            android:layout_width="40dp"-->
-            <!--            android:layout_height="40dp"-->
-            <!--            android:src="@drawable/sqr"/>-->
-            <!--        </LinearLayout>-->
+            android:layout_alignParentBottom="true">
         </com.etebarian.meowbottomnavigation.MeowBottomNavigation>
     </RelativeLayout>
 </layout>

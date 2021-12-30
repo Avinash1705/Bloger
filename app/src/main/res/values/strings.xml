@@ -2,4 +2,14 @@
     <string name="app_name">Blog</string>
     <string name="course_name">Course Name</string>
     <string name="course_rating">Course Description</string>
+    <string name="nav_open">Open</string>
+    <string name="nav_close">Close</string>
+
+
+    <string-array name="navigation_drawer_items_array">
+        <item>Connect</item>
+        <item>Fixtures</item>
+        <item>Table</item>
+    </string-array>
+
 </resources>

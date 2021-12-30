@@ -4,9 +4,15 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/activity_main.xml" value="0.25" />
-        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/activity_view_blog.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/activity_test_drawable.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/activity_view_blog.xml" value="0.3309178743961353" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/card_layout.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/header_nav.xml" value="0.1796875" />
         <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/list_name.xml" value="0.165" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/test_header.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/layout/toolbar.xml" value="0.1796875" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/menu/main_drawable.xml" value="0.25" />
+        <entry key="..\:/Users/dell/AndroidStudioProjects/Blog/app/src/main/res/menu/menu_extra.xml" value="0.1796875" />
       </map>
     </option>
   </component>

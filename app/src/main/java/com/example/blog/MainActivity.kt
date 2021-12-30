@@ -2,6 +2,7 @@ package com.example.blog
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.MenuItem
 import android.widget.Toast
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -9,13 +10,23 @@ import com.etebarian.meowbottomnavigation.MeowBottomNavigation
 import com.example.blog.adapter.RecycerViewDetail
 import com.example.blog.databinding.ActivityMainBinding
 import com.example.blog.model.UserDetail
+import androidx.appcompat.app.ActionBarDrawerToggle
 
-class MainActivity : AppCompatActivity() {
+import androidx.drawerlayout.widget.DrawerLayout
+import com.google.android.material.navigation.NavigationBarView
+import com.google.android.material.navigation.NavigationView
+
+
+class MainActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListener{
     lateinit var binding :ActivityMainBinding
+    var drawerLayout: DrawerLayout? = null
+    var toggle: ActionBarDrawerToggle? = null
+    lateinit var nav:NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-       binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
-//        supportActionBar?.hide()
+        binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
+            setSupportActionBar(binding.toolbar)
+
         populatingNavBar()
         populatingHorizontalList()
 
@@ -28,6 +39,8 @@ class MainActivity : AppCompatActivity() {
         binding.nav.setOnReselectListener{
             Toast.makeText(applicationContext, "reselect"+it.id , Toast.LENGTH_SHORT).show()
         }
+
+        //
 
     }
     fun populatingNavBar(){
@@ -47,6 +60,12 @@ class MainActivity : AppCompatActivity() {
                 }
             }
         }
+            //set toggel btn
+        toggle = ActionBarDrawerToggle(this,binding.myDrawerLayout,R.string.nav_open,R.string.nav_close)
+        binding
+    }
+    private fun init(){
+
     }
     fun populatingHorizontalList(){
         //fake data
@@ -58,5 +77,12 @@ class MainActivity : AppCompatActivity() {
         binding.rv.layoutManager = LinearLayoutManager(this)
         val recyAdapter = RecycerViewDetail(arrayData,this)
         binding.rv.adapter = recyAdapter
+    }
+
+    override fun onNavigationItemSelected(item: MenuItem): Boolean {
+        when(item.itemId){
+            R.id.nav_account -> Toast.makeText(this, "nav account", Toast.LENGTH_SHORT).show()
+        }
+       return true
     }
 }

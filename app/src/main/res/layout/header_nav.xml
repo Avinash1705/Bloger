@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<ImageView
+    android:layout_width="90dp"
+    android:layout_height="90dp"
+    android:src="@drawable/john"
+    android:id="@+id/ivJon"
+    android:layout_margin="10dp"/>
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="90dp"
+        android:layout_toRightOf="@+id/ivJon"
+        android:text="John Snow"
+        android:gravity="center"
+        android:textSize="16sp"
+        android:fontFamily="@font/song"
+        android:textStyle="bold"
+        android:textColor="#F50057"
+        android:layout_margin="10dp"/>
+</RelativeLayout>

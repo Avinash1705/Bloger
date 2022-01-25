@@ -19,17 +19,22 @@ import com.google.android.material.navigation.NavigationView
 
 class MainActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelectedListener{
     lateinit var binding :ActivityMainBinding
-    var drawerLayout: DrawerLayout? = null
-    var toggle: ActionBarDrawerToggle? = null
+    var actionBarDrawerToggle: ActionBarDrawerToggle? = null
     lateinit var nav:NavigationView
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= DataBindingUtil.setContentView(this,R.layout.activity_main)
-            setSupportActionBar(binding.toolbar)
-
+//            setSupportActionBar(binding.toolbar)
+        init()
         populatingNavBar()
         populatingHorizontalList()
+        //
+        actionBarDrawerToggle = ActionBarDrawerToggle(this,binding.myDrawerLayout,R.string.nav_open,R.string.nav_close)
+        //to toggle
+        binding.myDrawerLayout.addDrawerListener(actionBarDrawerToggle!!)
+        actionBarDrawerToggle!!.syncState()
 
+        supportActionBar?.setHomeButtonEnabled(true)
         //set notification count
         binding.nav.setCount(1,"10")
         binding.nav.show(2,true)
@@ -39,9 +44,6 @@ class MainActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
         binding.nav.setOnReselectListener{
             Toast.makeText(applicationContext, "reselect"+it.id , Toast.LENGTH_SHORT).show()
         }
-
-        //
-
     }
     fun populatingNavBar(){
         binding.nav.add(MeowBottomNavigation.Model(1,R.drawable.ic_baseline_house_24))
@@ -50,22 +52,18 @@ class MainActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
         binding.nav.add(MeowBottomNavigation.Model(4,R.drawable.sqr))
 
         binding.nav.setOnShowListener {
-            when(it.id){
+            when (it.id) {
                 1 -> Toast.makeText(applicationContext, "House", Toast.LENGTH_SHORT).show()
                 2 -> Toast.makeText(applicationContext, "Menu", Toast.LENGTH_SHORT).show()
-                3-> Toast.makeText(applicationContext, "search", Toast.LENGTH_SHORT).show()
+                3 -> Toast.makeText(applicationContext, "search", Toast.LENGTH_SHORT).show()
                 3 -> Toast.makeText(applicationContext, "sqr", Toast.LENGTH_SHORT).show()
-                else ->{
+                else -> {
                     Toast.makeText(applicationContext, "else", Toast.LENGTH_SHORT).show()
                 }
             }
         }
-            //set toggel btn
-        toggle = ActionBarDrawerToggle(this,binding.myDrawerLayout,R.string.nav_open,R.string.nav_close)
-        binding
     }
     private fun init(){
-
     }
     fun populatingHorizontalList(){
         //fake data
@@ -80,9 +78,15 @@ class MainActivity : AppCompatActivity() ,NavigationView.OnNavigationItemSelecte
     }
 
     override fun onNavigationItemSelected(item: MenuItem): Boolean {
-        when(item.itemId){
-            R.id.nav_account -> Toast.makeText(this, "nav account", Toast.LENGTH_SHORT).show()
+//        when(item.itemId){
+//            R.id.nav_account -> Toast.makeText(this, "nav account", Toast.LENGTH_SHORT).show()
+//            R.id.nav_settings -> Toast.makeText(this, "nav account", Toast.LENGTH_SHORT).show()
+//            R.id.nav_logout -> Toast.makeText(this, "nav account", Toast.LENGTH_SHORT).show()
+//        }
+        if (actionBarDrawerToggle!!.onOptionsItemSelected(item)) {
+            Toast.makeText(this, ""+item.itemId, Toast.LENGTH_SHORT).show()
+            return true
         }
-       return true
+        return super.onOptionsItemSelected(item)
     }
 }

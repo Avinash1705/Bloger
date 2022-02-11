@@ -10,6 +10,11 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Blog">
         <activity
+            android:name=".ui.activity.DrawableTestActivity"
+            android:exported="true" >
+
+        </activity>
+        <activity
             android:name=".ViewBlogActivity"
             android:exported="false" />
         <activity

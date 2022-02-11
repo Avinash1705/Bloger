@@ -9,8 +9,8 @@
 
     <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        tools:context=".MainActivity">
+        android:layout_height="match_parent">
+
         <androidx.drawerlayout.widget.DrawerLayout
             android:id="@+id/my_drawer_layout"
             android:layout_width="match_parent"
@@ -20,95 +20,77 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
 
-                <TextView
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="128dp"
-                    android:gravity="center"
-                    android:text="GeeksforGeeks"
-                    android:textSize="18sp" />
+                    android:orientation="horizontal"
+                    android:padding="5dp">
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentLeft="true"
+                            android:src="@drawable/menu" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1">
+
+                        <ImageView
+                            android:layout_width="40dp"
+                            android:layout_height="40dp"
+                            android:layout_alignParentRight="true"
+                            android:src="@drawable/search" />
+                    </RelativeLayout>
+                </LinearLayout>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Good Morning"
+                    android:layout_marginTop="30dp" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Jon Snow"
+                    android:layout_marginTop="30dp"
+                    android:textSize="20sp"
+                    android:textStyle="bold" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Your Daily Reads"
+                    android:layout_marginTop="30dp" />
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent" />
 
             </LinearLayout>
-            <androidx.appcompat.widget.Toolbar
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/toolbar"
-                android:backgroundTint="@color/cream"/>
             <com.google.android.material.navigation.NavigationView
+                android:id="@+id/nav_main_side"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_gravity="start"
-                app:menu="@menu/main_drawable"
                 app:headerLayout="@layout/header_nav"
-                android:id="@+id/nav_main"/>
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
-
-            <LinearLayout
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:padding="5dp">
-
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentLeft="true"
-                        android:src="@drawable/menu" />
-                </RelativeLayout>
-                <RelativeLayout
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_weight="1">
-
-                    <ImageView
-                        android:layout_width="40dp"
-                        android:layout_height="40dp"
-                        android:layout_alignParentRight="true"
-                        android:src="@drawable/search" />
-                </RelativeLayout>
-            </LinearLayout>
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Good Morning" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Jon Snow"
-                android:textSize="20sp"
-                android:textStyle="bold" />
-
-            <TextView
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="30dp"
-                android:text="Your Daily Reads" />
-
-            <androidx.recyclerview.widget.RecyclerView
-                android:id="@+id/rv"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent" />
-        </LinearLayout>
+                app:menu="@menu/main_drawable" />
         </androidx.drawerlayout.widget.DrawerLayout>
+
         <com.etebarian.meowbottomnavigation.MeowBottomNavigation
             android:id="@+id/nav"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
-        </com.etebarian.meowbottomnavigation.MeowBottomNavigation>
+            android:layout_alignParentBottom="true" />
     </RelativeLayout>
 </layout>

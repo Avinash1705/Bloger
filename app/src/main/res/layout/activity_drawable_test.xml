@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.drawerlayout.widget.DrawerLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".ui.activity.DrawableTestActivity"
+        android:id="@+id/dlTest"
+        tools:openDrawer="start">
+        <com.google.android.material.appbar.AppBarLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <Toolbar
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/toolbar"/>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <com.google.android.material.navigation.NavigationView
+            android:id="@+id/nav_test_side"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_gravity="start"
+            app:headerLayout="@layout/header_nav"
+            app:menu="@menu/main_drawable"/>
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/fragHost"
+            android:background="#FFF8E1"/>
+    </androidx.drawerlayout.widget.DrawerLayout>
+</layout>
